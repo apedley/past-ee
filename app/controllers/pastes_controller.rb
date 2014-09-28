@@ -1,5 +1,5 @@
 class PastesController < ApplicationController
-  before_action :set_paste, only: [:show, :edit, :update, :destroy]
+  before_action :set_paste, only: [:show, :update, :destroy]
   def show
   end
 
@@ -17,13 +17,17 @@ class PastesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
+    if @paste.update(update_paste_params)
+      redirect_to @paste
+    else
+      render 'show'
+    end
   end
 
   def destroy
+    @note.destroy
+    redirect_to new_paste_url
   end
 
   private
@@ -33,6 +37,9 @@ class PastesController < ApplicationController
   end
 
   def create_paste_params
+    params.require(:paste).permit(:title, :body)
+  end
+  def update_paste_params
     params.require(:paste).permit(:title, :body)
   end
 end
