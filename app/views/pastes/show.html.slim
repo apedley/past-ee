@@ -1,9 +1,9 @@
 h2
   = @paste.title
 
-p
-  == @paste.formatted_body
+/ .formattedpaste
+/   == @paste.formatted_body
 
-form
-  textarea.pastearea
-    = @paste.body
+
+
+= render partial: "pastes/form", :locals => { :paste => @paste }

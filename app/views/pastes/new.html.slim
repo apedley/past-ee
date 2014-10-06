@@ -1,13 +1,3 @@
 h2 New Paste
 
-= form_for([@paste]) do |f|
-  dev.field
-    = f.label :title
-    br
-    = f.text_field :title
-  div.field
-    = f.label :body
-    br
-    = f.text_area :body
-  div.actions
-    = f.submit
+= render partial: "pastes/form", :locals => { :paste => @paste }

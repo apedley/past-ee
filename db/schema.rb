@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928140741) do
+ActiveRecord::Schema.define(version: 20140928190939) do
 
   create_table "pastes", force: true do |t|
     t.string   "title"
     t.text     "body"
-    t.text     "formatted_body"
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"

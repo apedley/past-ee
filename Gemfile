@@ -20,6 +20,7 @@ gem 'spring',        group: :development
 gem 'slim'
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'rouge'
 
 
 group :development do
